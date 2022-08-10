@@ -1,4 +1,5 @@
 from pydantic import BaseModel, HttpUrl
+from typing import Optional
 
 class ResponseErrorSchema(BaseModel):
     status: str = "ERROR"
@@ -16,4 +17,4 @@ class PayRequestSchema(BaseModel):
     callback: HttpUrl
     maxSendable: str
     minSendable: str
-    metadata: str
+    metadata: Optional[str]
